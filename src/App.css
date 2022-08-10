@@ -1,38 +1,170 @@
-.App {
-  text-align: center;
+.partition {
+  margin: 1rem;
+  min-height: calc(100vh);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  box-sizing: border-box;
+  width: calc(100%-2rem);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.left{
+ min-height: 100vh;
+  width: 100%;
+  justify-content: space-around;
+  box-sizing: content-box;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.left > textarea{
+  height: 48vh;
+  width: 100%;
+  resize: none;
+  outline: none;
+  border: 2px solid gray;
+  box-sizing: border-box;
 }
 
-.App-header {
-  background-color: #282c34;
+.left>textarea:focus{
+  outline: none;
+  border: 2px solid #007dfc;
+
+}
+
+.left > div{
+  box-sizing: border-box;
+  margin-top: 1rem;
+  min-height: 48vh;
+  width: 100%;
+  border: 2px solid rgb(255, 93, 93);
+  
+}
+
+.right{
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  width: 100%;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  box-sizing: content-box;
 }
 
-.App-link {
-  color: #61dafb;
+.right>.preview{
+  min-height: 100%;
+  min-width: 98%;
+  box-sizing: border-box;
+  border: 2px solid rgb(0, 215, 4);
+  margin: 0 1rem;
+  padding: 1rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+.preview-window{
+    text-align: start;
+}
+
+.heading{
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.paragraph{
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.bold{
+    font-weight: bold;
+}
+
+.italic {
+    font-style: italic;
+}
+
+.bold-italic{
+    font-weight: bold;
+     font-style: italic;
+}
+
+.image{
+    width: 100%;
+    height: auto;
+    margin:  2rem 0 ;
+}
+
+.linebreak-part{
+    width: 100% ;
+    height: 2px;
+    
+   
+    margin: 1rem auto;
+}
+
+.linebreak{
+    width: 60px;
+    height: 3px;
+    background-color: #404040;
+   
+    margin: 1rem auto;  
+    position: relative;
+   
+    
+}
+
+.linebreak::before{
+    content: "";
+    width: 60px;
+    height: 3px;
+    position: absolute;
+    right: 4rem;
+    
+    background-color: #404040;
+  
+    
+}
+
+.linebreak::after{
+    content: "";
+    width: 60px;
+    height: 3px;
+    position: absolute;
+    left: 4rem;
+    
+    background-color: #404040;
+    
+    
+}
+
+
+.preview-heading h3{
+    letter-spacing: 2px;
+    text-transform: uppercase;
+   
+    margin: 1rem;
+}
+
+.preview-heading p {
+  
+    text-align: justify;
+    font-size: 0.9rem;
+}
+
+.code{
+  max-width: 700px;
+  background-color: #121212;
+  border-radius: 10px;
+  padding: 1rem;
+  overflow: auto;
+  color: aliceblue;
+  overflow-wrap: initial;
+  display: block;
+  white-space: pre;
+}
+
+.code code{
+  max-width: 100%;
+  overflow: auto;
+  font-family:Consolas, monaco, monospace;
+  font-size: 16px;
+
+}
+
+.code-sign{
+  background-color: #007dfc;
 }
